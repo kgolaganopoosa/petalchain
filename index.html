@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petal Chain – South Africa's Education & Career Hub</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon512.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #f8f9fa;
+            --card: #ffffff;
+            --text: #000000;
+            --text-muted: #555555;
+            --border: #000000;
+            --hover: #000000;
+            --light-gray: #eeeeee;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 90px;
+            line-height: 1.6;
+        }
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: #ffffff !important;
+            border-bottom: 3px solid #000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+        .navbar-brand {
+            font-weight: 900;
+            font-size: 1.9rem;
+            color: #000 !important;
+        }
+        .nav-link {
+            color: #000 !important;
+            font-weight: 600;
+            padding: 0.8rem 1.3rem !important;
+            transition: all 0.3s;
+        }
+        .nav-link:hover {
+            background: #f0f0f0;
+            border-radius: 8px;
+        }
+        .hero {
+            text-align: center;
+            padding: 140px 20px 100px;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+        }
+        .hero h1 {
+            font-size: 4.2rem;
+            font-weight: 900;
+            color: #000;
+            margin-bottom: 1rem;
+        }
+        .hero .lead {
+            font-size: 1.5rem;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+        .card {
+            background: var(--card);
+            border: 2px solid #000;
+            border-radius: 16px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        .btn-primary {
+            background: #000;
+            border: 2px solid #000;
+            color: #fff;
+            font-weight: 600;
+            padding: 0.75rem 1.8rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            background: #333;
+            border-color: #333;
+        }
+        .form-control, .input-group-text {
+            border: 2px solid #000;
+            background: #fff;
+            color: #000;
+        }
+        .input-group-text {
+            background: #000;
+            color: #fff;
+            font-weight: bold;
+        }
+        footer {
+            background: #000;
+            color: #ccc;
+            padding: 80px 0 40px;
+            margin-top: 160px;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: #000;
+        }
+        .category-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 60px;
+        }
+        .cat-btn {
+            background: transparent;
+            border: 2px solid #000;
+            color: #000;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .cat-btn:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .cat-btn.active {
+            background: #000;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .badge {
+            background: #000 !important;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Petal Chain</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#universities">Universities</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tvet">TVET</a></li>
+                <li class="nav-item"><a class="nav-link" href="#textbooks">Textbooks</a></li>
+                <li class="nav-item"><a class="nav-link" href="#bursaries">Bursaries</a></li>
+                <li class="nav-item"><a class="nav-link" href="#engines">Search Engines</a></li>
+                <li class="nav-item"><a class="nav-link" href="#accommodation">Accommodation</a></li>
+                <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="#clothing">Clothing Stores</a></li>
+                <li class="nav-item"><a class="nav-link" href="#banking">Banking</a></li>
+                <li class="nav-item"><a class="nav-link" href="#grocery">Grocery Shopping</a></li>
+                <li class="nav-item"><a class="nav-link" href="#transport">Transport</a></li>
+                <li class="nav-item"><a class="nav-link" href="#jobs">Jobs</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Your South African Lifestyle Hub</h1>
+    <p class="lead">From Degrees to Groceries – We've Got You Covered.</p>
+    
+    <div class="search-box mt-5">
+        <div class="input-group input-group-lg" style="max-width: 800px; margin: 0 auto;">
+            <span class="input-group-text">Search</span>
+            <input type="text" id="globalSearch" class="form-control" placeholder="Search for banks, brands, colleges, or transport...">
+        </div>
+    </div>
+
+    <div class="category-btns">
+        <button class="cat-btn active" data-category="all">All</button>
+        <button class="cat-btn" data-category="universities">Universities</button>
+        <button class="cat-btn" data-category="tvet">Colleges</button>
+        <button class="cat-btn" data-category="textbooks">Textbooks</button>
+        <button class="cat-btn" data-category="bursaries">Bursaries</button>
+        <button class="cat-btn" data-category="engines">Search Engines</button>
+        <button class="cat-btn" data-category="accommodation">Accommodation</button>
+        <button class="cat-btn" data-category="events">Events</button>
+        <button class="cat-btn" data-category="clothing">Clothing Stores</button>
+        <button class="cat-btn" data-category="banking">Banking</button>
+        <button class="cat-btn" data-category="grocery">Grocery Shopping</button>
+        <button class="cat-btn" data-category="transport">Transport</button>
+        <button class="cat-btn" data-category="jobs">Jobs</button>
+    </div>
+</div>
+
+<div class="container" id="mainContent">
+    <section id="universities" class="my-5">
+        <h2 class="text-center section-title">Public Universities (26)</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="universityList"></div>
+    </section>
+
+    <section id="tvet" class="my-5">
+        <h2 class="text-center section-title">TVET Colleges (50+)</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="tvetList"></div>
+    </section>
+
+    <section id="textbooks" class="my-5">
+        <h2 class="text-center section-title">Textbooks & Academic Gear</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="textbookList"></div>
+    </section>
+
+    <section id="bursaries" class="my-5">
+        <h2 class="text-center section-title">Bursaries & Scholarships</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="bursaryList"></div>
+    </section>
+
+    <section id="engines" class="my-5">
+        <h2 class="text-center section-title">Academic Search Engines</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="engineList"></div>
+    </section>
+
+    <section id="accommodation" class="my-5">
+        <h2 class="text-center section-title">Student Accommodation</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="accommodationList"></div>
+    </section>
+
+    <section id="events" class="my-5">
+        <h2 class="text-center section-title">Events & Socials</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="eventList"></div>
+    </section>
+
+    <section id="clothing" class="my-5">
+        <h2 class="text-center section-title">Online Clothing Stores</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="clothingList"></div>
+    </section>
+
+    <section id="banking" class="my-5">
+        <h2 class="text-center section-title">Banking & Finance</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="bankingList"></div>
+    </section>
+
+    <section id="grocery" class="my-5">
+        <h2 class="text-center section-title">Grocery Shopping</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="groceryList"></div>
+    </section>
+
+    <section id="transport" class="my-5">
+        <h2 class="text-center section-title">Transport Services</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="transportList"></div>
+    </section>
+
+    <section id="jobs" class="my-5">
+        <h2 class="text-center section-title">Graduate & Student Jobs</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4" id="jobList"></div>
+    </section>
+</div>
+
+<footer class="text-center">
+    <div class="container">
+        <p>© 2026 Petal Chain SA – Empowering Mzansi Youth</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// ==================== DATA LISTS ====================
+
+const universities = [
+    {name:"University of Cape Town", city:"Cape Town", website:"https://www.uct.ac.za"},
+    {name:"University of the Witwatersrand", city:"Johannesburg", website:"https://www.wits.ac.za"},
+    {name:"Stellenbosch University", city:"Stellenbosch", website:"https://www.sun.ac.za"},
+    {name:"University of Pretoria", city:"Pretoria", website:"https://www.up.ac.za"},
+    {name:"University of Johannesburg", city:"Johannesburg", website:"https://www.uj.ac.za"},
+    {name:"University of KwaZulu-Natal", city:"Durban/Pietermaritzburg", website:"https://www.ukzn.ac.za"},
+    {name:"University of the Free State", city:"Bloemfontein", website:"https://www.ufs.ac.za"},
+    {name:"Rhodes University", city:"Makhanda", website:"https://www.ru.ac.za"},
+    {name:"North-West University", city:"Potchefstroom / Mahikeng / Vanderbijlpark", website:"https://www.nwu.ac.za"},
+    {name:"University of Limpopo", city:"Polokwane / Turfloop", website:"https://www.ul.ac.za"},
+    {name:"University of Fort Hare", city:"Alice / East London", website:"https://www.ufh.ac.za"},
+    {name:"Walter Sisulu University", city:"Mthatha / East London / Butterworth", website:"https://www.wsu.ac.za"},
+    {name:"Nelson Mandela University", city:"Gqeberha", website:"https://www.mandela.ac.za"},
+    {name:"Cape Peninsula University of Technology", city:"Cape Town", website:"https://www.cput.ac.za"},
+    {name:"Central University of Technology", city:"Bloemfontein", website:"https://www.cut.ac.za"},
+    {name:"Durban University of Technology", city:"Durban", website:"https://www.dut.ac.za"},
+    {name:"Mangosuthu University of Technology", city:"Durban", website:"https://www.mut.ac.za"},
+    {name:"Tshwane University of Technology", city:"Pretoria", website:"https://www.tut.ac.za"},
+    {name:"Vaal University of Technology", city:"Vanderbijlpark", website:"https://www.vut.ac.za"},
+    {name:"University of South Africa (UNISA)", city:"Distance / Pretoria", website:"https://www.unisa.ac.za"},
+    {name:"University of Venda", city:"Thohoyandou", website:"https://www.univen.ac.za"},
+    {name:"University of Zululand", city:"KwaDlangezwa / Richards Bay", website:"https://www.unizulu.ac.za"},
+    {name:"Sefako Makgatho Health Sciences University", city:"Pretoria", website:"https://www.smu.ac.za"},
+    {name:"Sol Plaatje University", city:"Kimberley", website:"https://www.spu.ac.za"},
+    {name:"University of Mpumalanga", city:"Mbombela", website:"https://www.ump.ac.za"},
+    {name:"University of the Western Cape", city:"Bellville", website:"https://www.uwc.ac.za"}
+];
+
+const tvetColleges = [
+    {name:"Buffalo City TVET College", province:"Eastern Cape", website:"https://www.bccollege.co.za"},
+    {name:"Eastcape Midlands TVET College", province:"Eastern Cape", website:"https://www.emcol.co.za"},
+    {name:"Ikhala TVET College", province:"Eastern Cape", website:"https://ikhala.edu.za"},
+    {name:"Ingwe TVET College", province:"Eastern Cape", website:"https://ingwecollege.edu.za"},
+    {name:"King Hintsa TVET College", province:"Eastern Cape", website:"https://kinghintsacollege.edu.za"},
+    {name:"King Sabata Dalindyebo TVET College", province:"Eastern Cape", website:"https://www.ksdcollege.edu.za"},
+    {name:"Lovedale TVET College", province:"Eastern Cape", website:"https://www.lovedalecollege.co.za"},
+    {name:"Port Elizabeth TVET College", province:"Eastern Cape", website:"https://www.pec.edu.za"},
+    {name:"Flavius Mareka TVET College", province:"Free State", website:"https://www.flaviusmareka.net"},
+    {name:"Goldfields TVET College", province:"Free State", website:"https://goldfieldstvet.edu.za"},
+    {name:"Maluti TVET College", province:"Free State", website:"https://malutitvet.co.za"},
+    {name:"Motheo TVET College", province:"Free State", website:"https://www.motheotvet.co.za"},
+    {name:"Central Johannesburg TVET College", province:"Gauteng", website:"https://www.cjc.edu.za"},
+    {name:"Ekurhuleni East TVET College", province:"Gauteng", website:"https://www.eec.edu.za"},
+    {name:"Ekurhuleni West TVET College", province:"Gauteng", website:"https://www.ewc.edu.za"},
+    {name:"Sedibeng TVET College", province:"Gauteng", website:"https://www.sedcol.co.za"},
+    {name:"South West Gauteng TVET College", province:"Gauteng", website:"https://www.swgc.co.za"},
+    {name:"Tshwane North TVET College", province:"Gauteng", website:"https://www.tnc.edu.za"},
+    {name:"Tshwane South TVET College", province:"Gauteng", website:"https://www.tsc.edu.za"},
+    {name:"Western TVET College", province:"Gauteng", website:"https://www.westcol.co.za"},
+    {name:"Coastal TVET College", province:"KwaZulu-Natal", website:"https://www.coastalkzn.co.za"},
+    {name:"Elangeni TVET College", province:"KwaZulu-Natal", website:"https://www.elangeni.edu.za"},
+    {name:"Esayidi TVET College", province:"KwaZulu-Natal", website:"https://www.esayidifet.co.za"},
+    {name:"Majuba TVET College", province:"KwaZulu-Natal", website:"https://www.majuba.edu.za"},
+    {name:"Mnambithi TVET College", province:"KwaZulu-Natal", website:"https://www.mnambithicollege.co.za"},
+    {name:"Mthashana TVET College", province:"KwaZulu-Natal", website:"https://www.mthashanacollege.co.za"},
+    {name:"Thekwini TVET College", province:"KwaZulu-Natal", website:"https://www.thekwinicollege.co.za"},
+    {name:"Umfolozi TVET College", province:"KwaZulu-Natal", website:"https://www.umfolozicollege.co.za"},
+    {name:"Umgungundlovu TVET College", province:"KwaZulu-Natal", website:"https://www.utvet.co.za"},
+    {name:"Capricorn TVET College", province:"Limpopo", website:"https://www.capricorncollege.co.za"},
+    {name:"Lephalale TVET College", province:"Limpopo", website:"https://leptvetcol.edu.za"},
+    {name:"Letaba TVET College", province:"Limpopo", website:"https://letcol.co.za"},
+    {name:"Mopani South East TVET College", province:"Limpopo", website:"https://www.mopanicollege.edu.za"},
+    {name:"Sekhukhune TVET College", province:"Limpopo", website:"https://www.sekfetcol.org"},
+    {name:"Vhembe TVET College", province:"Limpopo", website:"https://www.vhembecollege.edu.za"},
+    {name:"Waterberg TVET College", province:"Limpopo", website:"https://www.waterbergcollege.co.za"},
+    {name:"Ehlanzeni TVET College", province:"Mpumalanga", website:"https://www.ehlanzenicollege.co.za"},
+    {name:"Gert Sibande TVET College", province:"Mpumalanga", website:"https://www.gscollege.edu.za"},
+    {name:"Nkangala TVET College", province:"Mpumalanga", website:"https://www.ntc.edu.za"},
+    {name:"Northern Cape Rural TVET College", province:"Northern Cape", website:"https://ncrfet.co.za"},
+    {name:"Northern Cape Urban TVET College", province:"Northern Cape", website:"https://ncutvet.edu.za"},
+    {name:"Orbit TVET College", province:"North West", website:"https://www.orbitcollege.co.za"},
+    {name:"Taletso TVET College", province:"North West", website:"https://taletso.edu.za"},
+    {name:"Vuselela TVET College", province:"North West", website:"https://www.vuselelacollege.co.za"},
+    {name:"Boland TVET College", province:"Western Cape", website:"https://www.bolandcollege.com"},
+    {name:"College of Cape Town", province:"Western Cape", website:"https://www.cct.edu.za"},
+    {name:"False Bay TVET College", province:"Western Cape", website:"https://www.falsebaycollege.co.za"},
+    {name:"Northlink TVET College", province:"Western Cape", website:"https://www.northlink.co.za"},
+    {name:"South Cape TVET College", province:"Western Cape", website:"https://www.sccollege.co.za"},
+    {name:"West Coast TVET College", province:"Western Cape", website:"https://www.westcoastcollege.co.za"}
+];
+
+const textbookShops = [
+    {name:"Van Schaik Bookstore", desc:"Official academic bookstore nationwide", website:"https://www.vanschaik.com"},
+    {name:"Takealot Textbooks", desc:"New & used university books", website:"https://www.takealot.com/books/textbooks"},
+    {name:"Loot Books", desc:"Wide range of academic titles", website:"https://www.loot.co.za"},
+    {name:"Juta", desc:"Legal and academic publisher and bookstore", website:"https://juta.co.za"},
+    {name:"Protea Boekwinkel", desc:"South African books and textbooks", website:"https://www.proteaboekwinkel.com"},
+    {name:"Amazon South Africa", desc:"Global retailer with textbook section", website:"https://www.amazon.co.za"},
+    {name:"Exclusive Books", desc:"Books and academic materials", website:"https://www.exclusivebooks.co.za"},
+    {name:"Snapplify", desc:"Digital textbooks and e-learning", website:"https://www.snapplify.com"},
+    {name:"Adams Booksellers", desc:"Academic and school books", website:"https://www.adamsbooks.co.za"},
+    {name:"Proust Books", desc:"Specialized in used textbooks", website:"https://proustbooks.co.za"}
+];
+
+const bursaries = [
+    {name:"NSFAS", desc:"Government student funding", website:"https://www.nsfas.org.za"},
+    {name:"Funza Lushaka", desc:"Teaching bursary", website:"https://www.funzalushaka.doe.gov.za"},
+    {name:"SASOL Bursaries", desc:"STEM & engineering", website:"https://www.sasolbursaries.com"},
+    {name:"ISFAP", desc:"Missing middle student funding", website:"https://www.isfap.org.za"},
+    {name:"Bursaries South Africa", desc:"Portal for various bursaries", website:"https://www.bursariessouthafrica.co.za"},
+    {name:"Allan Gray Orbis Foundation", desc:"Entrepreneurship scholarships", website:"https://www.allangrayorbis.org"},
+    {name:"Thuthuka Bursary Fund", desc:"Accounting bursaries", website:"https://www.saica.co.za/thuthuka"},
+    {name:"HCI Foundation Bursary", desc:"Undergraduate funding", website:"https://www.hcifoundation.co.za"},
+    {name:"Nedbank Bursary Programme", desc:"Various fields", website:"https://www.nedbank.co.za/content/nedbank/desktop/gt/en/personal/bursaries.html"},
+    {name:"Absa Bursary Programme", desc:"Banking and finance related", website:"https://www.absa.africa/absaafrica/citizenship/study-with-absa/bursary-programme/"},
+    {name:"Vodacom Bursary", desc:"ICT and engineering", website:"https://www.vodacom.com/bursaries"},
+    {name:"Anglo American Bursary", desc:"Mining and engineering", website:"https://www.angloamerican.com/careers/bursaries"},
+    {name:"Standard Bank Bursary", desc:"Commerce and IT", website:"https://www.standardbank.co.za/southafrica/personal/learn/bursaries"}
+];
+
+const searchEngines = [
+    {name:"Google Scholar", desc:"Academic & scholarly search", website:"https://scholar.google.com"},
+    {name:"BASE", desc:"Open access academic search", website:"https://www.base-search.net"},
+    {name:"CORE", desc:"Aggregates open access research", website:"https://core.ac.uk"},
+    {name:"JSTOR", desc:"Digital library for journals and books", website:"https://www.jstor.org"},
+    {name:"PubMed", desc:"Biomedical literature database", website:"https://pubmed.ncbi.nlm.nih.gov"},
+    {name:"ScienceDirect", desc:"Scientific, technical, and medical research", website:"https://www.sciencedirect.com"},
+    {name:"Semantic Scholar", desc:"AI-powered research tool", website:"https://www.semanticscholar.org"},
+    {name:"Scopus", desc:"Abstract and citation database", website:"https://www.scopus.com"},
+    {name:"Web of Science", desc:"Multidisciplinary research platform", website:"https://www.webofscience.com"},
+    {name:"Microsoft Academic", desc:"Free public search engine for academic publications", website:"https://academic.microsoft.com"},
+    {name:"DOAJ", desc:"Directory of Open Access Journals", website:"https://doaj.org"},
+    {name:"ResearchGate", desc:"Network for researchers", website:"https://www.researchgate.net"}
+];
+
+const accommodations = [
+    {name:"South Point", city:"National", desc:"Student residences", website:"https://www.staysouthpoint.co.za"},
+    {name:"DigsConnect", city:"National", desc:"Student housing marketplace", website:"https://www.digsconnect.com"},
+    {name:"Respublica", city:"National", desc:"Private student accommodation", website:"https://respublica.co.za"},
+    {name:"CampusKey", city:"National", desc:"Premium student living", website:"https://campuskey.co.za"},
+    {name:"Student.com", city:"National", desc:"Global student housing platform", website:"https://www.student.com/za"},
+    {name:"Student Village", city:"Johannesburg", desc:"UJ-affiliated accommodation", website:"https://www.studentvillage.co.za"},
+    {name:"Feenstra Group", city:"National", desc:"Affordable student res", website:"https://www.feenstragroup.co.za"},
+    {name:"Varsity Lodge", city:"Cape Town", desc:"UCT nearby accommodation", website:"https://www.varsitylodge.co.za"},
+    {name:"Private Property Student Accommodation", city:"National", desc:"Listings portal", website:"https://www.privateproperty.co.za/student-accommodation"},
+    {name:"Gumtree Student Housing", city:"National", desc:"Classifieds for digs", website:"https://www.gumtree.co.za/s-student-accommodation"}
+];
+
+const events = [
+    {name:"Cape Town International Jazz Festival", city:"Cape Town", desc:"Africa's largest jazz festival", website:"https://www.capetownjazzfest.com"},
+    {name:"National Arts Festival", city:"Makhanda", desc:"Africa's biggest arts festival", website:"https://nationalartsfestival.co.za"},
+    {name:"Durban July", city:"Durban", desc:"Premier horse racing & fashion event", website:"https://www.hollywoodbetsdurbanjuly.co.za"},
+    {name:"Rocking the Daisies", city:"Cape Town area", desc:"Music & lifestyle festival", website:"https://rockingthedaisies.com"},
+    {name:"Oppikoppi Festival", city:"Northam", desc:"Iconic rock & alternative festival", website:"https://www.oppikoppi.co.za"},
+    {name:"AfrikaBurn", city:"Tankwa Karoo", desc:"Burning Man style event", website:"https://www.afrikaburn.org"},
+    {name:"Two Oceans Marathon", city:"Cape Town", desc:"World-famous ultra marathon", website:"https://www.twooceansmarathon.org.za"},
+    {name:"Comrades Marathon", city:"Durban ↔ Pietermaritzburg", desc:"The ultimate human race", website:"https://www.comrades.com"},
+    {name:"Cape Town Cycle Tour", city:"Cape Town", desc:"World's largest timed cycle race", website:"https://www.capetowncycletour.com"},
+    {name:"Splashy Fen", city:"Underberg", desc:"Oldest outdoor music festival", website:"https://splashyfen.co.za"},
+    {name:"Joy of Jazz", city:"Johannesburg", desc:"International jazz celebration", website:"https://www.joyofjazz.co.za"},
+    {name:"Hermanus Whale Festival", city:"Hermanus", desc:"Whale watching event", website:"https://www.hermanuswhalefestival.co.za"},
+    {name:"Knysna Oyster Festival", city:"Knysna", desc:"Food and adventure fest", website:"https://www.oysterfestival.co.za"},
+    {name:"Ultra-Trail Cape Town", city:"Cape Town", desc:"Trail running event", website:"https://www.ultratrailcapetown.com"},
+    {name:"Soweto Wine Festival", city:"Soweto", desc:"Wine tasting and culture", website:"https://sowetowinefestival.co.za"},
+    {name:"Cape Town Comedy Festival", city:"Cape Town", desc:"Stand-up comedy showcase", website:"https://www.capetowncomedyfestival.com"},
+    {name:"Design Indaba", city:"Cape Town", desc:"Creative conference", website:"https://www.designindaba.com"},
+    {name:"Cheese Festival", city:"Stellenbosch", desc:"Cheese and wine expo", website:"https://cheesefestival.co.za"},
+    {name:"Franschhoek Literary Festival", city:"Franschhoek", desc:"Books and authors event", website:"https://flf.co.za"},
+    {name:"Klein Karoo Nasionale Kunstefees", city:"Oudtshoorn", desc:"Afrikaans arts festival", website:"https://www.kknk.co.za"}
+];
+
+const clothingStores = [
+    {name:"Superbalist", desc:"Premium online fashion", website:"https://superbalist.com"},
+    {name:"Zando", desc:"Fashion, shoes & accessories", website:"https://www.zando.co.za"},
+    {name:"Mr Price", desc:"Affordable trendy clothing", website:"https://www.mrp.com"},
+    {name:"Shein", desc:"Fast fashion at low prices", website:"https://za.shein.com"},
+    {name:"H&M", desc:"Global fashion retailer", website:"https://www2.hm.com/en_za/index.html"},
+    {name:"Cotton On", desc:"Casual & trendy basics", website:"https://cottonon.com/ZA/"},
+    {name:"Foschini (TFG)", desc:"Ladies fashion & accessories", website:"https://www.foschini.co.za"},
+    {name:"Truworths", desc:"Contemporary women's fashion", website:"https://www.truworths.co.za"},
+    {name:"Edgars", desc:"Department store fashion", website:"https://www.edgars.co.za"},
+    {name:"Legit", desc:"Young women's fashion", website:"https://www.legit.co.za"},
+    {name:"Woolworths", desc:"Quality clothing & lifestyle", website:"https://www.woolworths.co.za"},
+    {name:"Mango", desc:"Trendy European style", website:"https://shop.mango.com/ZA"},
+    {name:"Zara", desc:"Fast fashion from Spain", website:"https://www.zara.com/za/"}
+];
+
+const bankStores = [
+    {name:"FNB", desc:"Leading digital & innovation bank", website:"https://www.fnb.co.za"},
+    {name:"Standard Bank", desc:"Africa's biggest bank by assets", website:"https://www.standardbank.co.za"},
+    {name:"Absa", desc:"Full-service retail & business bank", website:"https://www.absa.co.za"},
+    {name:"Nedbank", desc:"Green & digital banking focus", website:"https://www.nedbank.co.za"},
+    {name:"Capitec", desc:"Most-loved, low-cost banking", website:"https://www.capitecbank.co.za"},
+    {name:"TymeBank", desc:"Fully digital, no monthly fees", website:"https://www.tymebank.co.za"},
+    {name:"Discovery Bank", desc:"Vitality-linked rewards banking", website:"https://www.discovery.co.za/bank"},
+    {name:"Investec", desc:"Private & corporate banking", website:"https://www.investec.com"},
+    {name:"African Bank", desc:"High-interest savings & loans", website:"https://www.africanbank.co.za"},
+    {name:"Bank Zero", desc:"Zero-fee mobile-only bank", website:"https://www.bankzero.co.za"},
+    {name:"Bidvest Bank", desc:"Specialist & forex banking", website:"https://www.bidvestbank.co.za"}
+];
+
+const groceryStores = [
+    {name:"Checkers Sixty60", desc:"Fastest same-day grocery delivery", website:"https://www.checkers.co.za/sixty60"},
+    {name:"Pick n Pay asap!", desc:"Quick delivery & click & collect", website:"https://www.pnp.co.za/asap"},
+    {name:"Woolworths WRewards Dash", desc:"Premium food delivery", website:"https://www.woolworths.co.za"},
+    {name:"Shoprite", desc:"Largest food retailer in Africa", website:"https://www.shoprite.co.za"},
+    {name:"Checkers", desc:"Quality fresh & branded goods", website:"https://www.checkers.co.za"},
+    {name:"Pick n Pay", desc:"Wide range + Smart Shopper rewards", website:"https://www.pnp.co.za"},
+    {name:"SPAR", desc:"Neighborhood convenience stores", website:"https://www.spar.co.za"},
+    {name:"Food Lover's Market", desc:"Fresh produce & gourmet", website:"https://foodloversmarket.co.za"},
+    {name:"Makro", desc:"Bulk buying & wholesale", website:"https://www.makro.co.za"},
+    {name:"Boxer", desc:"Low-price township-focused stores", website:"https://www.boxer.co.za"},
+    {name:"Usave", desc:"Discount grocery chain", website:"https://www.usave.co.za"}
+];
+
+const transportServices = [
+    {name:"Uber", desc:"Leading ride-hailing app – nationwide major cities", website:"https://www.uber.com/za/en/"},
+    {name:"Bolt", desc:"Affordable & popular ride-hailing (often cheaper than Uber)", website:"https://bolt.eu/en-za/"},
+    {name:"inDrive", desc:"Negotiate fares directly – growing fast in SA", website:"https://indrive.com/"},
+    {name:"Yango", desc:"Competitive fares & smart routing in expanding cities", website:"https://yango.com/"},
+    {name:"Intercape", desc:"Safe long-distance luxury buses across SA & beyond", website:"https://www.intercape.co.za"},
+    {name:"Greyhound", desc:"Reliable intercity coach services", website:"https://www.greyhound.co.za"},
+    {name:"Translux", desc:"Comfortable long-distance buses + budget options", website:"https://www.translux.co.za"},
+    {name:"Gautrain", desc:"Fast rail between Johannesburg, Pretoria & OR Tambo Airport", website:"https://www.gautrain.co.za"},
+    {name:"MyCiTi", desc:"Cape Town bus rapid transit (BRT) & feeder services", website:"https://myciti.org.za"},
+    {name:"Rea Vaya", desc:"Johannesburg BRT system", website:"https://www.reavaya.org.za"},
+    {name:"Golden Arrow", desc:"Major bus services in Western Cape", website:"https://www.gabs.co.za"},
+    {name:"Metrorail (PRASA)", desc:"Commuter rail in major metros (use with caution – check status)", website:"https://www.prasa.com"},
+    {name:"Shosholoza Meyl", desc:"Long-distance passenger rail (PRASA)", website:"https://www.prasa.com"},
+    {name:"inDrive (intercity)", desc:"Affordable shared long-distance rides in some regions", website:"https://indrive.com/"},
+    {name:"Minibus Taxis", desc:"Widely used shared taxis – very affordable but informal (hand signals needed)", website:"https://www.transport.gov.za"},
+    {name:"Baz Bus", desc:"Hop-on hop-off backpacker bus along coast & key routes", website:"https://www.bazbus.com"},
+    {name:"Springbok Atlas", desc:"Luxury coach & minibus charters", website:"https://www.springbokatlas.co.za"},
+    {name:"Buscor", desc:"Public & private bus services (Mpumalanga focus)", website:"https://www.buscor.co.za"}
+];
+
+const jobPortals = [
+    {name:"PNet", url:"https://www.pnet.co.za"},
+    {name:"CareerJunction", url:"https://www.careerjunction.co.za"},
+    {name:"Indeed South Africa", url:"https://za.indeed.com"},
+    {name:"LinkedIn Jobs", url:"https://www.linkedin.com/jobs"},
+    {name:"GradConnection", url:"https://za.gradconnection.com"},
+    {name:"Careers24", url:"https://www.careers24.com"},
+    {name:"JobVine", url:"https://www.jobvine.co.za"},
+    {name:"Gumtree Jobs", url:"https://www.gumtree.co.za/s-jobs"},
+    {name:"Youth Employment Service (YES)", url:"https://www.yes4youth.co.za"},
+    {name:"Glassdoor South Africa", url:"https://www.glassdoor.co.za"},
+    {name:"Michael Page", url:"https://www.michaelpage.co.za"},
+    {name:"Robert Walters", url:"https://www.robertwalters.co.za"},
+    {name:"HigherEdJobs (SA focus)", url:"https://www.higheredjobs.com/international/country.cfm?CountryID=197"},
+    {name:"SA Government Jobs", url:"https://www.gov.za/vacancies"},
+    {name:"DPS A Vacancies", url:"https://www.dpsa.gov.za/vacancies"}
+];
+
+// ────────────────────────────────────────────────
+//  CONSTANTS & CONFIGURATION
+// ────────────────────────────────────────────────
+
+const DOM = {
+  globalSearch: document.getElementById("globalSearch"),
+  categoryButtons: document.querySelectorAll(".cat-btn"),
+  mainContent: document.getElementById("mainContent")
+};
+
+const SECTION_CONFIG = [
+  {
+    id: "universities",
+    title: "Public Universities (26)",
+    data: universities,
+    listId: "universityList",
+    type: "university",
+    renderBadge: false
+  },
+  {
+    id: "tvet",
+    title: "TVET Colleges (50+)",
+    data: tvetColleges,
+    listId: "tvetList",
+    type: "tvet",
+    renderBadge: true   // shows province
+  },
+  {
+    id: "textbooks",
+    title: "Textbooks & Academic Gear",
+    data: textbookShops,
+    listId: "textbookList",
+    type: "textbook",
+    renderBadge: false
+  },
+  {
+    id: "bursaries",
+    title: "Bursaries & Scholarships",
+    data: bursaries,
+    listId: "bursaryList",
+    type: "bursary",
+    renderBadge: false
+  },
+  {
+    id: "engines",
+    title: "Academic Search Engines",
+    data: searchEngines,
+    listId: "engineList",
+    type: "engine",
+    renderBadge: false
+  },
+  {
+    id: "accommodation",
+    title: "Student Accommodation",
+    data: accommodations,
+    listId: "accommodationList",
+    type: "accommodation",
+    renderBadge: false
+  },
+  {
+    id: "events",
+    title: "Events & Socials",
+    data: events,
+    listId: "eventList",
+    type: "event",
+    renderBadge: false
+  },
+  {
+    id: "clothing",
+    title: "Online Clothing Stores",
+    data: clothingStores,
+    listId: "clothingList",
+    type: "clothing",
+    renderBadge: false
+  },
+  {
+    id: "banking",
+    title: "Banking & Finance",
+    data: bankStores,
+    listId: "bankingList",
+    type: "banking",
+    renderBadge: false
+  },
+  {
+    id: "grocery",
+    title: "Grocery Shopping",
+    data: groceryStores,
+    listId: "groceryList",
+    type: "grocery",
+    renderBadge: false
+  },
+  {
+    id: "transport",
+    title: "Transport Services",
+    data: transportServices,
+    listId: "transportList",
+    type: "transport",
+    renderBadge: false
+  },
+  {
+    id: "jobs",
+    title: "Graduate & Student Jobs",
+    data: jobPortals,
+    listId: "jobList",
+    type: "job",
+    renderBadge: false,
+    columns: 4   // wider cards for jobs
+  }
+];
+
+// ────────────────────────────────────────────────
+//  HELPER FUNCTIONS
+// ────────────────────────────────────────────────
+
+function createCard(item, type, renderBadge = false) {
+  const badge = renderBadge && item.province
+    ? `<span class="badge mb-2">${item.province}</span>`
+    : "";
+
+  const subtitle = (type === "university" || type === "event")
+    ? (item.city || "")
+    : (item.desc || "");
+
+  return `
+    <div class="col">
+      <div class="card h-100 text-center">
+        <div class="card-body d-flex flex-column">
+          ${badge}
+          <h5 class="card-title mt-2">${item.name}</h5>
+          <p class="text-muted small flex-grow-1">${subtitle}</p>
+          <a href="${item.website || item.url || '#'}" 
+             target="_blank" 
+             class="btn btn-primary mt-auto">
+            Visit Site
+          </a>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderSection(sectionConfig, filteredItems) {
+  const container = document.getElementById(sectionConfig.listId);
+  if (!container) return;
+
+  container.innerHTML = filteredItems.length === 0
+    ? `<p class="text-center w-100 py-4">No results found.</p>`
+    : filteredItems.map(item => createCard(item, sectionConfig.type, sectionConfig.renderBadge)).join("");
+
+  // Show/hide section
+  const sectionEl = document.getElementById(sectionConfig.id);
+  sectionEl.style.display = filteredItems.length > 0 ? "block" : "none";
+}
+
+function matchesSearch(item, query) {
+  if (!query) return true;
+  const q = query.toLowerCase();
+
+  return (
+    item.name?.toLowerCase().includes(q) ||
+    item.city?.toLowerCase().includes(q) ||
+    item.desc?.toLowerCase().includes(q) ||
+    item.province?.toLowerCase().includes(q)
+  );
+}
+
+function getActiveCategory() {
+  const activeBtn = document.querySelector(".cat-btn.active");
+  return activeBtn ? activeBtn.dataset.category : "all";
+}
+
+function filterAndRenderAll() {
+  const query = DOM.globalSearch.value.trim().toLowerCase();
+  const activeCategory = getActiveCategory();
+
+  SECTION_CONFIG.forEach(config => {
+    const isActive = (activeCategory === "all" || activeCategory === config.id);
+
+    if (!isActive) {
+      document.getElementById(config.id).style.display = "none";
+      return;
+    }
+
+    const filtered = config.data.filter(item => matchesSearch(item, query));
+    renderSection(config, filtered);
+  });
+}
+
+// ────────────────────────────────────────────────
+//  EVENT LISTENERS & INITIAL RENDER
+// ────────────────────────────────────────────────
+
+DOM.globalSearch.addEventListener("input", filterAndRenderAll);
+
+DOM.categoryButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    DOM.categoryButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    filterAndRenderAll();
+  });
+});
+
+// Initial render
+filterAndRenderAll();
+</script>
+</body>
+</html>
